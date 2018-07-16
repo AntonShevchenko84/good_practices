@@ -1,0 +1,17 @@
+По поводу защиты:
+
+
+На самом деле, хранение git-репозитария внутри рабочей директории сама по себе плохая практика by design.
+Хорошая практика:
+
+
+git init --separate-git-dir=/special/folder/for/git/<project-name>
+git clone --separate-git-dir=/special/folder/for/git/<project-name> <orig-repository>
+
+И т.д.
+
+
+В этом случае внутри рабочей директории будет храниться только файлик .git с содержанием вида:
+
+
+gitdir: /special/folder/for/git/<project-name>
